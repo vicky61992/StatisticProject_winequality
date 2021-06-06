@@ -698,6 +698,13 @@ roc.curve(test_set$quality, y_pred)
 #Variable importance
 varImp(lr)
 
+# Compare all model
+
+knitr::kable(cbind(lr = unlist(accuracy_lr),
+                   dt = unlist(accuracy_dt),
+                   rf = unlist(accuracy_rf)) %>% round(3),
+             caption = "ALL MODEL COMPARION TABLE")
+
 
 
 
